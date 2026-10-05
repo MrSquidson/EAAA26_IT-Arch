@@ -1,2 +1,2 @@
 # EAAA26_IT-Arch
-General Repo for IT Architecture studies @ EAAA (see https://eaaa.dk)
+General Repo for my P.ba. IT Architecture studies @ EAAA (see more at https://eaaa.dk)
