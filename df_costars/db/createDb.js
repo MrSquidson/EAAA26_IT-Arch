@@ -1,0 +1,75 @@
+import { connect } from './connect.js';
+import upload from 'pg-upload';
+
+const db = await connect();
+const timestamp = (await db.query('select now() as timestamp')).rows[0]['timestamp'];
+console.log(`Recreating database on ${timestamp}...`);
+
+const tables = [
+    "artists",
+    "albums",
+    "media_types",
+    "tracks",
+    "genres",
+    "users",
+    "playlists",
+    "playlist_track",
+    "actors",
+    "castings",
+    "movies"
+]
+
+// drop all tables present in the list.
+await tables.forEach(async (db_table) => {
+    await db.query(`drop table if exists ${db_table}`);
+    console.log(`Dropped table ${db_table}`);
+});
+
+// Create tables in the remote database
+
+await db.query(`
+    create table actors (
+        actor_id   integer,
+        stage_name  text,
+        nationality char(2),
+        sex        char(1)
+    )
+`);
+
+await db.query(`
+    create table castings (
+        movie_id         integer,
+        actor_id        integer,
+        role        text
+    )
+`);
+await db.query(`
+    create table movies (
+        id integer,
+        title     text,
+        year   integer
+    )
+`);
+
+// Upload data from CSV files into the tables on remote
+
+await upload(db, 'db/actors.csv', `
+    copy actors (actor_id, stage_name, nationality, sex)
+    from stdin
+    with csv encoding 'UTF-8'
+`);
+
+await upload(db, 'db/castings.csv', `
+    copy castings (movie_id, actor_id, role)
+    from stdin
+    with csv header encoding 'UTF-8'
+`);
+
+await upload(db, 'db/movies.csv', `
+    copy movies (id, title, year)
+    from stdin
+    with csv header encoding 'UTF-8'
+`);
+
+await db.end();
+console.log('Database successfully recreated.');

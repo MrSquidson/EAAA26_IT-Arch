@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+.env
+# Im not using .sql files as intended (to manage and edit databases) but rather as a way to write out queries before sending on the remote database.
+# As such i do not want these synced to origin. If i update the purposes i will review this decision. 
+*.sql 
