@@ -35,6 +35,7 @@ await db.query(`
         sex        char(1)
     )
 `);
+console.log(`Created table actors`);
 
 await db.query(`
     create table castings (
@@ -43,6 +44,7 @@ await db.query(`
         role        text
     )
 `);
+console.log(`Created table castings`);
 await db.query(`
     create table movies (
         id integer,
@@ -50,6 +52,7 @@ await db.query(`
         year   integer
     )
 `);
+console.log(`Created table movies`);
 
 // Upload data from CSV files into the tables on remote
 
@@ -58,18 +61,21 @@ await upload(db, 'db/actors.csv', `
     from stdin
     with csv encoding 'UTF-8'
 `);
+console.log(`Uploaded to table actors`);
 
 await upload(db, 'db/castings.csv', `
     copy castings (movie_id, actor_id, role)
     from stdin
     with csv header encoding 'UTF-8'
 `);
+console.log(`Uploaded to table castings`);
 
 await upload(db, 'db/movies.csv', `
     copy movies (id, title, year)
     from stdin
     with csv header encoding 'UTF-8'
 `);
+console.log(`Uploaded to table movies`);
 
 await db.end();
 console.log('Database successfully recreated.');
