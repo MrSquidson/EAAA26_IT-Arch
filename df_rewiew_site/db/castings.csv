@@ -1,0 +1,21 @@
+movie_id,actor_id,role
+1,1,Andy Dufresne
+1,2,Ellis Boyd Redding
+2,3,Don Vito Corleone
+2,4,Michael Corleone
+3,5,Bruce Wayne
+3,6,Joker
+4,7,Vincent Vega
+4,8,Jules Winnfield
+5,9,Forrest Gump
+5,10,Lieutenant Dan Taylor
+6,11,Dominick Cobb
+6,12,Arthur
+7,13,Jack Dawson
+7,14,Rose DeWitt Bukater
+8,15,Neo
+8,16,Morpheus
+9,17,Cooper
+9,18,Brand
+10,19,Dr. Alan Grant
+10,20,Dr. Ellie Sattler

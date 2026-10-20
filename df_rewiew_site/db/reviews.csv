@@ -1,0 +1,11 @@
+film_id,user_id,content,rating,review_id
+1,1,"A timeless classic with excellent storytelling.",5,1
+2,2,"An exciting action film with impressive visuals.",4,2
+3,3,"A moving drama with outstanding performances.",5,3
+4,4,"The plot was predictable, but the acting was good.",3,4
+5,5,"A hilarious comedy that kept me entertained.",4,5
+6,1,"A thrilling mystery with an unexpected ending.",5,6
+7,6,"Beautiful cinematography, but the story felt slow.",3,7
+8,7,"An inspiring film with memorable characters.",4,8
+9,2,"The special effects were great, but the dialogue was weak.",3,9
+10,8,"An unforgettable masterpiece with a powerful message.",5,10

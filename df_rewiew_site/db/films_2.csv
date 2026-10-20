@@ -1,0 +1,13 @@
+﻿film_id,title,director_id,genre_id,year
+1,The Shawshank Redemption,1,1,2025
+2,The Godfather,2,2,2025
+3,The Dark Knight,3,3,2025
+4,Pulp Fiction,4,2,2025
+5,Inception,3,5,2025
+6,Titanic,5,6,2025
+7,The Matrix,7,5,2025
+8,Parasite,8,4,2025
+9,Interstellar,3,5,2025
+10,Spirited Away,9,8,2025
+11,Get Out,10,10,2025
+12,Barbie,11,11,2025
